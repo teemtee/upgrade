@@ -1,0 +1,3 @@
+test: ./task.sh
+framework: beakerlib
+tag: [fedora]

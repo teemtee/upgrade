@@ -1,0 +1,6 @@
+jobs:
+  - job: tests
+    trigger: pull_request
+    metadata:
+        targets: [fedora-35]
+        skip_build: true
