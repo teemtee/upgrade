@@ -1,3 +1,5 @@
 test: ./task.sh
 framework: beakerlib
-tag: [fedora]
+tag:
+  - fedora-35
+  - fedora-36

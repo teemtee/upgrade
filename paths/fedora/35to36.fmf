@@ -1,0 +1,8 @@
+summary: Upgrade from Fedora 35 to Fedora 36
+discover+:
+    filter+: "tag:fedora-35"
+provision+:
+    image: fedora-35
+environment+:
+    SOURCE: 35
+    TARGET: 36
