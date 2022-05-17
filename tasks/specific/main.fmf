@@ -1,0 +1,13 @@
+summary: Distro specific checks
+framework: shell
+order: 50
+
+/f35:
+    summary: Fedora 35 specific check
+    tag: [fedora-35]
+    test: grep 35 /etc/redhat-release
+
+/f36:
+    summary: Fedora 36 specific check
+    tag: [fedora-36]
+    test: grep 36 /etc/redhat-release

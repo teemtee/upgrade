@@ -1,0 +1,9 @@
+summary: Common setup for Fedora updates
+discover:
+    how: fmf
+provision:
+    how: virtual
+environment:
+    DISTRO: fedora
+execute:
+    how: tmt
