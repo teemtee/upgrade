@@ -10,8 +10,11 @@ rlJournalStart
 
     rlPhaseStartTest "Update"
         rlRun "rpm -qa | sort | tee old" 0 "Check packages before update"
-        rlRun "dnf update -y" 0 "Update to the latest packages"
-        rlRun "sed -i s/$SOURCE/$TARGET/ /etc/os-release" 0 "Fake the upgrade"
+        rlRun "dnf --refresh update -y" 0 "Update to the latest packages"
+        rlRun "dnf upgrade -y" 0 "Update to the latest packages"
+        rlRun "dnf install dnf-plugin-system-upgrade -y" 0 "Install dnf upgrade plugin"
+        rlRun "dnf system-upgrade download --releasever=$TARGET -y" 0 "Download new Fedora packages"
+        rlRun "dnf system-upgrade reboot" 0 "start actual upgrade"
         rlRun "rpm -qa | sort | tee new" 0 "Check packages after update"
         rlRun "diff old new" 1 "Compare package lists"
     rlPhaseEnd
