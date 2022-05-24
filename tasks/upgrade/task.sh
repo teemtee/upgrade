@@ -11,6 +11,7 @@ rlJournalStart
     rlPhaseStartTest "Update"
         if [[ "$TMT_REBOOT_COUNT" == "0" ]]; then
             rlRun "rpm -qa | sort | tee old" 0 "Check packages before update"
+            rlFileSubmit old
             rlRun "dnf --refresh update -y" 0 "Update to the latest packages"
             rlRun "dnf upgrade -y" 0 "Update to the latest packages"
             rlRun "dnf install dnf-plugin-system-upgrade -y" 0 "Install dnf upgrade plugin"
@@ -19,7 +20,7 @@ rlJournalStart
         else
             rlLog "Successfully rebooted"
             rlRun "rpm -qa | sort | tee new" 0 "Check packages after update"
-            rlRun "diff old new" 1 "Compare package lists"
+            rlRun "diff $TMT_TEST_DATA/old new" 1 "Compare package lists"
         fi
     rlPhaseEnd
 
