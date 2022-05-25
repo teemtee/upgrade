@@ -1,7 +1,8 @@
 summary: Upgrade from Fedora 35 to Fedora 36
 discover:
     how: fmf
-    filter: "tag:fedora"
+    test: /tasks/prepare
+    #filter: "tag:fedora"
 provision:
     how: virtual
     image: fedora-35
