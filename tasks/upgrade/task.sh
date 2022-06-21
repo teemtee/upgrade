@@ -16,7 +16,7 @@ rlJournalStart
             rlRun "dnf upgrade -y" 0 "Update to the latest packages"
             rlRun "dnf install dnf-plugin-system-upgrade -y" 0 "Install dnf upgrade plugin"
             rlRun "dnf system-upgrade download --releasever=$TARGET -y" 0 "Download new Fedora packages"
-            rlRun "tmt-reboot -c \"dnf system-upgrade reboot\"" 0 "Start actual upgrade"
+            rlRun "tmt-reboot -c \"dnf system-upgrade reboot\" -t 1800" 0 "Start actual upgrade"
         else
             rlLog "Successfully rebooted"
             rlRun "rpm -qa | sort | tee new" 0 "Check packages after update"
