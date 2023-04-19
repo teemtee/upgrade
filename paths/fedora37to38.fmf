@@ -1,0 +1,12 @@
+summary: Upgrade from Fedora 37 to Fedora 38
+discover:
+    how: fmf
+    filter: "tag:fedora"
+provision:
+    how: virtual
+    image: fedora-37
+environment:
+    SOURCE: 37
+    TARGET: 38
+execute:
+    how: tmt
