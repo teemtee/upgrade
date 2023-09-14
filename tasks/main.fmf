@@ -1,3 +1,6 @@
 test: ./task.sh
 framework: beakerlib
 tag: [fedora]
+require:
+  - type: file
+    pattern: /paths
