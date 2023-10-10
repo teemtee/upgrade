@@ -1,0 +1,12 @@
+summary: Upgrade from Fedora 38 to Fedora 39
+discover:
+    how: fmf
+    filter: "tag:fedora"
+provision:
+    how: virtual
+    image: fedora-38
+environment:
+    SOURCE: 38
+    TARGET: 39
+execute:
+    how: tmt

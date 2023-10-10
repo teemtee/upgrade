@@ -1,12 +1,12 @@
-summary: Upgrade from Fedora 36 to Fedora 37
+summary: Upgrade from Fedora 39 to Fedora 40
 discover:
     how: fmf
     filter: "tag:fedora"
 provision:
     how: virtual
-    image: fedora-36
+    image: fedora-39
 environment:
-    SOURCE: 36
-    TARGET: 37
+    SOURCE: 39
+    TARGET: 40
 execute:
     how: tmt

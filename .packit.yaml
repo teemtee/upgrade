@@ -2,5 +2,5 @@ jobs:
   - job: tests
     trigger: pull_request
     metadata:
-        targets: [fedora-36]
+        targets: [fedora-37]
         skip_build: true

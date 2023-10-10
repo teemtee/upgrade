@@ -1,0 +1,12 @@
+summary: Upgrade from Fedora 40 to Fedora 41
+discover:
+    how: fmf
+    filter: "tag:fedora"
+provision:
+    how: virtual
+    image: fedora-40
+environment:
+    SOURCE: 40
+    TARGET: 41
+execute:
+    how: tmt
