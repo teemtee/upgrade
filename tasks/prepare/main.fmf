@@ -1,2 +1,3 @@
 summary: Prepare distro for the upgrade
+require: dummy-test-package-crested
 order: 10
