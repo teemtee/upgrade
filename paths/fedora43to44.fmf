@@ -6,7 +6,7 @@ provision:
     how: virtual
     image: fedora-43
 environment:
-    SOURCE: 40
-    TARGET: 41
+    SOURCE: 43
+    TARGET: 44
 execute:
     how: tmt
