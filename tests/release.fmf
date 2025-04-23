@@ -1,0 +1,9 @@
+summary: Check the system release
+test: |
+    cat /etc/redhat-release
+
+    if [[ "$IN_PLACE_UPGRADE" ==  "old" ]]; then
+        grep -q 'Fedora release 40' /etc/redhat-release
+    else
+        grep -q 'Fedora release 41' /etc/redhat-release
+    fi
