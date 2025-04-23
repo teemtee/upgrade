@@ -1,0 +1,9 @@
+discover:
+    how: fmf
+    test: /tests/release
+provision:
+    how: virtual
+    image: fedora-40
+execute:
+    how: upgrade
+    upgrade-path: /paths/fedora40to41
