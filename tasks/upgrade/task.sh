@@ -19,7 +19,7 @@ rlJournalStart
                 rlRun "dnf config-manager --disable testing-farm-tag-repository"
             fi
             rlRun "dnf system-upgrade download --releasever=$TARGET -y" 0 "Download new Fedora packages"
-            rlRun "tmt-reboot -c \"dnf system-upgrade reboot\" -t 1800" 0 "Start actual upgrade"
+            rlRun "tmt-reboot -c \"dnf5 -y offline reboot\" -t 1800" 0 "Start actual upgrade"
         else
             rlLog "Successfully rebooted"
             rlRun "rpm -qa | sort | tee new" 0 "Check packages after update"
