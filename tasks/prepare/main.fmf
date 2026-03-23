@@ -1,3 +1,7 @@
 summary: Prepare distro for the upgrade
-require: dummy-test-package-crested
+description:
+    Require the `tree` package so that `/tests/execute/upgrade`
+    from the main `tmt` repo can verify the dependencies are
+    correctly installed.
+require: tree
 order: 10
