@@ -16,7 +16,7 @@ rlJournalStart
             rlRun "dnf upgrade -y" 0 "Update to the latest packages"
             rlRun "dnf install dnf-plugin-system-upgrade -y" 0 "Install dnf upgrade plugin"
             if dnf repolist | grep testing-farm-tag-repository; then
-                rlRun "dnf config-manager --disable testing-farm-tag-repository"
+                rlRun "dnf config-manager setopt testing-farm-tag-repository.enabled=0"
             fi
             rlRun "dnf system-upgrade download --releasever=$TARGET -y" 0 "Download new Fedora packages"
             rlRun "tmt-reboot -c \"dnf5 -y offline reboot\" -t 1800" 0 "Start actual upgrade"
