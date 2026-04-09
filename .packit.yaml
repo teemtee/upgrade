@@ -2,15 +2,15 @@ jobs:
 
 - job: tests
   trigger: pull_request
-  targets: [fedora-37]
-  tmt_plan: /paths/fedora37to38
+  targets: [fedora-42]
+  tmt_plan: /paths/fedora42to43
   skip_build: true
-  identifier: fedora37to38
+  identifier: fedora42to43
 
 - job: tests
   trigger: pull_request
   metadata:
-  targets: [fedora-38]
-  tmt_plan: /paths/fedora38to39
+  targets: [fedora-43]
+  tmt_plan: /paths/fedora43to44
   skip_build: true
-  identifier: fedora38to39
+  identifier: fedora43to44
