@@ -1,5 +1,7 @@
 jobs:
 
+# Upgrade Paths
+
 - job: tests
   trigger: pull_request
   targets: [fedora-42]
@@ -14,3 +16,12 @@ jobs:
   tmt_plan: /paths/fedora43to44
   skip_build: true
   identifier: fedora43to44
+
+# Full Upgrade
+
+- job: tests
+  trigger: pull_request
+  targets: [fedora-43]
+  tmt_plan: /plans/fedora43to44
+  skip_build: true
+  identifier: full-upgrade
