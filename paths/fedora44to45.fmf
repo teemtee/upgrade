@@ -10,3 +10,7 @@ environment:
     TARGET: 45
 execute:
     how: tmt
+
+adjust:
+    enabled: false
+    when: distro is defined and distro != fedora-44
