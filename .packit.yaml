@@ -4,18 +4,10 @@ jobs:
 
 - job: tests
   trigger: pull_request
-  targets: [fedora-42]
-  tmt_plan: /paths/fedora42to43
+  targets: [fedora-stable]
+  tmt_plan: /paths/
   skip_build: true
-  identifier: fedora42to43
-
-- job: tests
-  trigger: pull_request
-  metadata:
-  targets: [fedora-43]
-  tmt_plan: /paths/fedora43to44
-  skip_build: true
-  identifier: fedora43to44
+  identifier: upgrade-path
 
 # Full Upgrade
 
