@@ -1,0 +1,16 @@
+summary: Upgrade from Fedora 44 to Fedora 45
+discover:
+    how: fmf
+    filter: "tag:fedora"
+provision:
+    how: virtual
+    image: fedora-44
+environment:
+    SOURCE: 44
+    TARGET: 45
+execute:
+    how: tmt
+
+adjust:
+    enabled: false
+    when: distro is defined and distro != fedora-44

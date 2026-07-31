@@ -1,0 +1,16 @@
+summary: Upgrade from Fedora 45 to Fedora 46
+discover:
+    how: fmf
+    filter: "tag:fedora"
+provision:
+    how: virtual
+    image: fedora-45
+environment:
+    SOURCE: 45
+    TARGET: 46
+execute:
+    how: tmt
+
+adjust:
+    enabled: false
+    when: distro is defined and distro != fedora-45
